@@ -1,0 +1,26 @@
+{
+    "name": "crafter-web",
+    "configurations": [
+        {
+            "name": "base",
+            "standard": "c++26",
+            "source_files": ["Crafter.Web-HtmlElement"],
+            "module_files": ["Crafter.Web-HtmlElement", "Crafter.Web"],
+            "additional_files": ["Crafter.Web.js"],
+            "build_dir": "./build",
+            "output_dir": "./bin",
+            "type":"library",
+            "target":"wasm32-unknown-wasi"
+        },
+        {
+            "name": "debug",
+            "extends": ["base"],
+            "optimization_level": "0"
+        },
+        {
+            "name": "release",
+            "extends": ["base"],
+            "optimization_level": "3"
+        }
+    ]
+}
