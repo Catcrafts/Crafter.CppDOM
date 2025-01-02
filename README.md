@@ -28,7 +28,7 @@ Create a basic project file, that describes your web project.
             "type": "executable",
             "dependencies": [
                 {
-                    "path":"../project.json",
+                    "path":"path/to/Crafter.Web/project.json",
                     "configuration":"debug"
                 }
             ]
