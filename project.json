@@ -4,9 +4,9 @@
         {
             "name": "base",
             "standard": "c++26",
-            "source_files": ["Crafter.Web-HtmlElement", "Crafter.Web-Canvas"],
-            "module_files": ["Crafter.Web-Canvas", "Crafter.Web-HtmlElement", "Crafter.Web"],
-            "additional_files": ["Crafter.Web.js"],
+            "source_files": [],
+            "module_files": ["Crafter.CppDOM"],
+            "additional_files": ["Crafter.CppDOM.js"],
             "build_dir": "./build",
             "output_dir": "./bin",
             "type":"library",
