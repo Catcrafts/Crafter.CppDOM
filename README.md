@@ -43,7 +43,7 @@ using namespace Crafter::Web;
 int main() {
     const char id[] = "body";
     const char content = "<h1>Hello from C++!</h1>";
-    Crafter::Web::Bindings::SetInnerHTML(id, sizeof(id)-1, content.c_str(), content.size()-1);
+    Crafter::CppDOM::Bindings::SetInnerHTML(id, sizeof(id)-1, content.c_str(), content.size()-1);
 }
 ```
 Save and close, then run ``crafter-webbuild serve -c debug``. Now you can open the browser at ``http://localhost:8080/`` and ``Hello from C++!`` will appear in the browser.
