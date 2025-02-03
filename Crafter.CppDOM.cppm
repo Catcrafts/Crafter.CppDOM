@@ -36,7 +36,7 @@ extern "C" {
 
 
 
-export namespace Crafter::CppDOM::Bindings {
+export namespace Crafter::CppDOM {
     __attribute__((import_module("env"), import_name("setInnerHTML"))) void SetInnerHTML(const char* id, std::size_t idLenght, const char* html, std::size_t htmlLenght);
     // __attribute__((import_module("env"), import_name("strokeRect"))) void StrokeRect(std::uint64_t id, std::uint32_t x, std::uint32_t y, std::uint32_t width, std::uint32_t height, const char* color, std::size_t colorLenght);
     // __attribute__((import_module("env"), import_name("putImageData"))) void PutImageData(std::uint64_t id, Crafter::Web::Pixel* buffer, std::uint32_t width, std::uint32_t height);
