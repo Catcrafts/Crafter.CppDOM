@@ -23,20 +23,25 @@ module;
 #include <vector>
 #include <unordered_map>
 #include <cstdint>
-export module Crafter.Web:HtmlElement;
+export module Crafter.Web:Canvas;
+import :HtmlElement;
 
 export namespace Crafter::Web {
-    class HtmlElement {
+
+    struct Pixel {
+        std::uint8_t r;
+        std::uint8_t g;
+        std::uint8_t b;
+        std::uint8_t a;
+    };
+
+    class Canvas : public Crafter::Web::HtmlElement {
     public:
-        inline static std::uint64_t idCounter = 0;
-        std::uint64_t id;
-        std::string tag;
-        std::string value;
-        std::unordered_map<std::string, std::string> style;
-        std::vector<HtmlElement*> children;
-        std::unordered_map<std::string, std::string> attributes;
-        HtmlElement(std::string tag, std::string value = "", std::unordered_map<std::string, std::string> style = {}, std::vector<HtmlElement*> children = {}, std::unordered_map<std::string, std::string> attributes = {});
-        std::string Render() const;
-        void RenderAsRoot() const;
+        std::uint32_t width;
+        std::uint32_t height;
+        Canvas(std::uint32_t width, std::uint32_t height, std::string value = "", std::unordered_map<std::string, std::string> style = {}, std::vector<HtmlElement*> children = {}, std::unordered_map<std::string, std::string> attributes = {});
+        void DrawRect(std::uint32_t x, std::uint32_t y, std::uint32_t width, std::uint32_t height, std::string color);
+        void SetBuffer(Pixel* buffer);
     };
 }
+

@@ -1,5 +1,5 @@
 /*
-Crafter.Build
+Crafter.Web
 Copyright (C) 2024 Catcrafts
 Catcrafts.net
 
@@ -28,15 +28,15 @@ module;
 module Crafter.Web;
 using namespace Crafter::Web;
 
-HtmlElement::HtmlElement(std::string tag, std::string value, std::unordered_map<std::string, std::string> style, std::vector<HtmlElement> children, std::unordered_map<std::string, std::string> attributes) : id(idCounter++), tag(tag), children(children), style(style), value(value), attributes(attributes) {
+HtmlElement::HtmlElement(std::string tag, std::string value, std::unordered_map<std::string, std::string> style, std::vector<HtmlElement*> children, std::unordered_map<std::string, std::string> attributes) : id(idCounter++), tag(tag), children(children), style(style), value(value), attributes(attributes) {
 
 }
 
 
 std::string HtmlElement::Render() const {
     std::string childrenRendered;
-    for(const HtmlElement& child : children){
-        childrenRendered+=child.Render();
+    for(HtmlElement* child : children){
+        childrenRendered+=child->Render();
     }
     std::string styleRender;
     for(const auto& [key, value] : style){
@@ -46,7 +46,7 @@ std::string HtmlElement::Render() const {
     for(const auto& [key, value] : attributes){
         attributesRender+=std::format("{}=\"{}\"",key,value);
     }
-    return std::format("<{} style=\"{}\" {}>{}{}</{}>",tag, styleRender, attributesRender, value, childrenRendered, tag);
+    return std::format("<{} id=\"{}\" style=\"{}\" {}>{}{}</{}>",tag, id, styleRender, attributesRender, value, childrenRendered, tag);
 }
 
 void HtmlElement::RenderAsRoot() const {

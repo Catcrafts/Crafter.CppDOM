@@ -4,8 +4,8 @@
         {
             "name": "base",
             "standard": "c++26",
-            "source_files": ["Crafter.Web-HtmlElement"],
-            "module_files": ["Crafter.Web-HtmlElement", "Crafter.Web"],
+            "source_files": ["Crafter.Web-HtmlElement", "Crafter.Web-Canvas"],
+            "module_files": ["Crafter.Web-Canvas", "Crafter.Web-HtmlElement", "Crafter.Web"],
             "additional_files": ["Crafter.Web.js"],
             "build_dir": "./build",
             "output_dir": "./bin",
