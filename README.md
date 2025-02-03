@@ -9,7 +9,6 @@ Crafter.Web is a C++ library that exposes the browser DOM api's to C++ WebAssemb
 It is highly recommended to use this with [Crafter.WebBuild](https://github.com/Catcrafts/Crafter.WebBuild), but it is not strictly required if the same way of injecting the env is followed. The following instructions will be for Crafter.WebBuild.
 
 ## Quickstart
-(This can also be seen in the ``sample`` folder)
 create a ``project.json`` in an empty folder, open it in your preferred text editor.
 Create a basic project file, that describes your web project.
 ```JSON
