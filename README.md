@@ -2,7 +2,7 @@
 
 ![alt text](https://github.com/Catcrafts/Crafter.Web/blob/master/hello.png?raw=true)
 
-Crafter.Web is a C++ library to allow DOM access from WebAssembly.
+Crafter.Web is a C++ library that exposes the browser DOM api's to C++ WebAssembly.
 
 # How to use
 
@@ -28,7 +28,7 @@ Create a basic project file, that describes your web project.
             "type": "executable",
             "dependencies": [
                 {
-                    "path":"path/to/Crafter.Web/project.json",
+                    "path":"https://github.com/Catcrafts/Crafter.CppDOM.git",
                     "configuration":"debug"
                 }
             ]
@@ -42,11 +42,9 @@ import Crafter.Web;
 using namespace Crafter::Web;
 
 int main() {
-    HtmlElement root("div", "Hello from C++!");
-    root.RenderAsRoot();
+    const char id[] = "body";
+    const char content = "<h1>Hello from C++!</h1>";
+    Crafter::Web::Bindings::SetInnerHTML(id, sizeof(id)-1, content.c_str(), content.size()-1);
 }
-
 ```
 Save and close, then run ``crafter-webbuild serve -c debug``. Now you can open the browser at ``http://localhost:8080/`` and ``Hello from C++!`` will appear in the browser.
-
-A proper documentation is soon to follow, but for now please view the ``sample`` folder.
