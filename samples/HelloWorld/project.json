@@ -14,7 +14,7 @@
             "type": "executable",
             "dependencies": [
                 {
-                    "path":"/home/jorijn/repos/Crafter.CppDOM/project.json",
+                    "path":"../../project.json",
                     "configuration":"debug"
                 }
             ]

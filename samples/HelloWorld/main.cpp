@@ -1,7 +1,8 @@
 import Crafter.CppDOM;
+using namespace Crafter::CppDOM::Bindings;
 
 int main(){
-    void* body = Crafter::CppDOM::Bindings::GetElementById("body");
-    Crafter::CppDOM::Bindings::SetInnerHTML(body, "Hello World!");
-    Crafter::CppDOM::Bindings::FreeJs(body);
+    void* body = GetElementById("body");
+    SetInnerHTML(body, "Hello World!");
+    FreeJs(body);
 }

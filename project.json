@@ -5,7 +5,7 @@
             "name": "base",
             "standard": "c++26",
             "source_files": [],
-            "module_files": ["Crafter.CppDOM"],
+            "module_files": ["Crafter.CppDOM-HtmlElement", "Crafter.CppDOM", "Crafter.CppDOM-Bindings"],
             "additional_files": ["Crafter.CppDOM.js"],
             "build_dir": "./build",
             "output_dir": "./bin",
