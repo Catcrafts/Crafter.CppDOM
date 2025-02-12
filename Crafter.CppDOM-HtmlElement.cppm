@@ -1,6 +1,6 @@
 /*
-Crafter.Web
-Copyright (C) 2024 Catcrafts
+Crafter.CppDOM
+Copyright (C) 2025 Catcrafts
 Catcrafts.net
 
 This library is free software; you can redistribute it and/or
