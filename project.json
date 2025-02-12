@@ -1,5 +1,5 @@
 {
-    "name": "crafter-web",
+    "name": "crafter-cppdom",
     "configurations": [
         {
             "name": "base",

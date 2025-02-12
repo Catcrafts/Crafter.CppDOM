@@ -37,13 +37,14 @@ Create a basic project file, that describes your web project.
 ```
 Save and close the file, create a ``main.cpp``
 ```cpp
-import Crafter.Web;
-using namespace Crafter::Web;
+import Crafter.CppDOM;
 
-int main() {
-    const char id[] = "body";
-    const char content = "<h1>Hello from C++!</h1>";
-    Crafter::CppDOM::SetInnerHTML(id, sizeof(id)-1, content.c_str(), content.size()-1);
+int main(){
+    void* body = Crafter::CppDOM::Bindings::GetElementById("body");
+    Crafter::CppDOM::Bindings::SetInnerHTML(body, "Hello World!");
+    Crafter::CppDOM::Bindings::FreeJs(body);
 }
 ```
-Save and close, then run ``crafter-webbuild serve -c debug``. Now you can open the browser at ``http://localhost:8080/`` and ``Hello from C++!`` will appear in the browser.
+Save and close, then run ``crafter-webbuild serve -c debug``. Now you can open the browser at ``http://localhost:8080/`` and ``Hello World!`` will appear in the browser.
+
+This sample can also be viewed in the [Hello World sample](https://github.com/Catcrafts/Crafter.CppDOM/tree/master/samples/HelloWorld)
