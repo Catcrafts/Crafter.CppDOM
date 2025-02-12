@@ -23,6 +23,10 @@ module;
 export module Crafter.CppDOM:Bindings;
 
 
+export namespace Crafter::CppDOM {
+    __attribute__((import_module("env"), import_name("freeJs"))) void FreeJs(void* ptr);
+}
+
 export namespace Crafter::CppDOM::Bindings {
     __attribute__((import_module("env"), import_name("getElementById"))) void* GetElementById(const char* id, std::size_t idLenght);
     inline void* GetElementById(const std::string& id) {
@@ -32,5 +36,4 @@ export namespace Crafter::CppDOM::Bindings {
     inline void SetInnerHTML(void* ptr, const std::string& html) {
         SetInnerHTML(ptr, html.c_str(), html.size());
     }
-    __attribute__((import_module("env"), import_name("freeJs"))) void FreeJs(void* ptr);
 }
