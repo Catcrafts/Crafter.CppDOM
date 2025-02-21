@@ -46,6 +46,7 @@ Create a basic project file, that describes your web project.
         }
     ]
 }
+```
 
 Save and close the file, create a ``main.cpp``
 ```cpp
