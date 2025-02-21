@@ -5,6 +5,18 @@
 Crafter.Web is a C++ library that exposes the browser DOM api's to C++ WebAssembly.
 
 # How to use
+Please view the samples folder, this is a snippit from the HelloElement sample:
+
+```cpp
+import Crafter.CppDOM;
+using namespace Crafter::CppDOM;
+
+int main(){
+    HtmlElement body("body");
+    body.SetInnerHTML("Hello World!");
+}
+```
+You can also view the wiki for more detailed information.
 
 It is highly recommended to use this with [Crafter.WebBuild](https://github.com/Catcrafts/Crafter.WebBuild), but it is not strictly required if the same way of injecting the env is followed. The following instructions will be for Crafter.WebBuild.
 
@@ -34,7 +46,7 @@ Create a basic project file, that describes your web project.
         }
     ]
 }
-```
+
 Save and close the file, create a ``main.cpp``
 ```cpp
 import Crafter.CppDOM;
@@ -45,6 +57,7 @@ int main(){
     body.SetInnerHTML("Hello World!");
 }
 ```
+
 Save and close, then run ``crafter-webbuild serve -c debug``. Now you can open the browser at ``http://localhost:8080/`` and ``Hello World!`` will appear in the browser.
 
 This sample can also be viewed in the [HelloElement sample](https://github.com/Catcrafts/Crafter.CppDOM/tree/master/samples/HelloElement)
