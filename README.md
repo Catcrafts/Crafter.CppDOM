@@ -2,7 +2,7 @@
 
 ![alt text](https://github.com/Catcrafts/Crafter.Web/blob/master/hello.png?raw=true)
 
-Crafter.Web is a C++ library that exposes the browser DOM api's to C++ WebAssembly.
+Crafter.CppDOM is a C++ library that exposes the browser DOM api's to C++ WebAssembly.
 
 # How to use
 Please view the samples folder, this is a snippit from the HelloElement sample:
